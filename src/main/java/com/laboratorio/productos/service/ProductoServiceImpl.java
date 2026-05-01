@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 public class ProductoServiceImpl implements ProductoService {
 
     private final ProductoRepository productoRepository;
+
+    public ProductoServiceImpl(ProductoRepository productoRepository) {
+        this.productoRepository = productoRepository;
+    }
 
     @Override
     public List<Producto> listarTodos() {

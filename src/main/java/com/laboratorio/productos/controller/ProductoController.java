@@ -11,10 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/productos")
-@RequiredArgsConstructor
 public class ProductoController {
 
     private final ProductoService productoService;
+
+    public ProductoController(ProductoService productoService) {
+        this.productoService = productoService;
+    }
 
     @GetMapping
     public ResponseEntity<List<Producto>> listar() {
